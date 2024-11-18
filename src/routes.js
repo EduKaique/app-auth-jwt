@@ -1,5 +1,5 @@
 const express = require("express");
-const { login, protectedContent } = require("./controllers/authController");
+const { login, protectedContent, users, products } = require("./controllers/authController");
 
 const router = express.Router();
 
@@ -13,5 +13,10 @@ router.post("/login", login);
 
 // Rota protegida
 router.get("/protected", protectedContent);
+
+//Rotas protegidas criadas
+router.get("/users", users)
+
+router.get("/products", products)
 
 module.exports = router;
